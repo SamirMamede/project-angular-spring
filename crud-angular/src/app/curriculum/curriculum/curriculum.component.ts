@@ -1,3 +1,4 @@
+import { Curriculum } from './../model/curriculum';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurriculumComponent implements OnInit {
 
-  constructor() { }
+  curriculum: Curriculum[] = [
+    { _id: '1', nome: 'Anuar Samir', competencias: 'Python e Java', vagaDesejada: 'Dev Jr', numeroContato: '12345'
+    , emailContato: 'fulano@gmail.com'}
+  ];
+  displayedColumns = ['nome', 'competencias', 'vagaDesejada', 'numeroContato', 'emailContato'];
+
+  constructor() {
+    // this.curriculum = [];
+  }
 
   ngOnInit(): void {
   }
