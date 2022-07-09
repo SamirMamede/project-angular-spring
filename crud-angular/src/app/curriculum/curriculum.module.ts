@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
 
+import { AppMaterialModule } from './../shared/app-material/app-material.module';
 import { CurriculumRoutingModule } from './curriculum-routing.module';
 import { CurriculumComponent } from './curriculum/curriculum.component';
+
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { CurriculumComponent } from './curriculum/curriculum.component';
   imports: [
     CommonModule,
     CurriculumRoutingModule,
-    MatTableModule
+    AppMaterialModule
   ]
 })
 export class CurriculumModule { }

@@ -9,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class CurriculumComponent implements OnInit {
 
   curriculum: Curriculum[] = [
-    { _id: '1', nome: 'Anuar Samir', competencias: 'Python e Java', vagaDesejada: 'Dev Jr', numeroContato: '12345'
-    , emailContato: 'fulano@gmail.com'}
+    { _id: '1', nome: 'Anuar Samir', competencias: 'Python e Java', vagaDesejada: 'Dev Jr', numeroContato: '1234-5678'
+    , linkedin: 'linkedin.com/in/samir-mamede/'}
   ];
-  displayedColumns = ['nome', 'competencias', 'vagaDesejada', 'numeroContato', 'emailContato'];
+  displayedColumns = ['nome', 'competencias', 'vagaDesejada', 'numeroContato', 'linkedin'];
 
   constructor() {
     // this.curriculum = [];

@@ -4,5 +4,5 @@ export interface Curriculum {
   competencias: string;
   vagaDesejada: string;
   numeroContato: string;
-  emailContato: string;
+  linkedin: string;
 }
