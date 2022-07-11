@@ -1,6 +1,7 @@
 import { CurriculumService } from './../services/curriculum.service';
 import { Curriculum } from './../model/curriculum';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-curriculum',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurriculumComponent implements OnInit {
 
-  curriculum: Curriculum[] = [];
+  curriculum: Observable<Curriculum[]>;
   displayedColumns = ['nome', 'competencias', 'vagaDesejada', 'numeroContato', 'linkedin'];
 
   ///curriculumService: CurriculumService;
