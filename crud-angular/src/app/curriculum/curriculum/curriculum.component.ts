@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class CurriculumComponent implements OnInit {
 
-  curriculum: Observable<Curriculum[]>;
+  curriculum$: Observable<Curriculum[]>;
   displayedColumns = ['nome', 'competencias', 'vagaDesejada', 'numeroContato', 'linkedin'];
 
   ///curriculumService: CurriculumService;
@@ -18,7 +18,7 @@ export class CurriculumComponent implements OnInit {
   constructor(private curriculumService: CurriculumService ) {
     // this.curriculum = [];
     //this.curriculumService = new CurriculumService;
-    this.curriculum = this.curriculumService.list();
+    this.curriculum$ = this.curriculumService.list();
   }
 
   ngOnInit(): void {
