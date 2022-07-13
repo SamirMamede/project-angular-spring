@@ -1,7 +1,9 @@
+import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
 import { CurriculumService } from './../services/curriculum.service';
 import { Curriculum } from './../model/curriculum';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-curriculum',
@@ -15,10 +17,24 @@ export class CurriculumComponent implements OnInit {
 
   ///curriculumService: CurriculumService;
 
-  constructor(private curriculumService: CurriculumService ) {
+  constructor(
+    private curriculumService: CurriculumService,
+    public dialog: MatDialog
+     ) {
     // this.curriculum = [];
     //this.curriculumService = new CurriculumService;
-    this.curriculum$ = this.curriculumService.list();
+    this.curriculum$ = this.curriculumService.list()
+    .pipe(
+      catchError(error => {
+        this.onError("Erro ao carregar lista de curriculums !!");
+        return of([])
+      })
+    );
+  }
+  onError(errorMsg: string) {
+    this.dialog.open(ErrorDialogComponent, {
+      data: errorMsg
+    });
   }
 
   ngOnInit(): void {

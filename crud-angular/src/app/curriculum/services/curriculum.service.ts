@@ -17,7 +17,6 @@ export class CurriculumService {
   list() {
     return   this.httpClient.get<Curriculum[]>(this.API).pipe(
       first(),
-      delay(5000),
       tap(curriculum => console.log(curriculum))
     );
   }
