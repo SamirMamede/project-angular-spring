@@ -1,35 +1,37 @@
 <mat-card>
-  <mat-toolbar color="primary">Talents</mat-toolbar>
+  <mat-toolbar color="primary">Talents
+    <mat-icon aria-hidden="false" aria-label="loyalty">loyalty</mat-icon>
+  </mat-toolbar>
 
   <div *ngIf="curriculum$ | async as curriculum; else loading">
   <table mat-table [dataSource]="curriculum" class="mat-elevation-z8">
 
     <!-- Name Column -->
     <ng-container matColumnDef="nome">
-      <th mat-header-cell *matHeaderCellDef> Nome </th>
-      <td mat-cell *matCellDef="let curriculum"> {{ curriculum.nome }} </td>
+      <th mat-header-cell *matHeaderCellDef> Nome</th>
+      <td mat-cell *matCellDef="let curriculum"> {{ curriculum.nome }}</td>
     </ng-container>
 
     <!-- Competencias Column -->
     <ng-container matColumnDef="competencias">
-      <th mat-header-cell *matHeaderCellDef> Competencias </th>
+      <th mat-header-cell *matHeaderCellDef> Competencias</th>
       <td mat-cell *matCellDef="let curriculum"> {{ curriculum.competencias }} </td>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="vagaDesejada">
-      <th mat-header-cell *matHeaderCellDef> Vaga Desejada </th>
+      <th mat-header-cell *matHeaderCellDef> Vaga Desejada</th>
       <td mat-cell *matCellDef="let curriculum"> {{ curriculum.vagaDesejada }} </td>
     </ng-container>
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="numeroContato">
-      <th mat-header-cell *matHeaderCellDef> Contato </th>
+      <th mat-header-cell *matHeaderCellDef> Contato</th>
       <td mat-cell *matCellDef="let curriculum"> {{ curriculum.numeroContato }} </td>
     </ng-container>
 
     <ng-container matColumnDef="linkedin">
-      <th mat-header-cell *matHeaderCellDef> Linkedin </th>
+      <th mat-header-cell *matHeaderCellDef> Linkedin</th>
       <td mat-cell *matCellDef="let curriculum"> {{ curriculum.linkedin }} </td>
     </ng-container>
 
