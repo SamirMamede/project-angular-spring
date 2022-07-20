@@ -4,6 +4,7 @@ import { Curriculum } from './../model/curriculum';
 import { Component, OnInit } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-curriculum',
@@ -13,13 +14,15 @@ import { MatDialog } from '@angular/material/dialog';
 export class CurriculumComponent implements OnInit {
 
   curriculum$: Observable<Curriculum[]>;
-  displayedColumns = ['nome', 'competencias', 'vagaDesejada', 'numeroContato', 'linkedin'];
+  displayedColumns = ['nome', 'competencias', 'vagaDesejada', 'numeroContato', 'linkedin', 'actions'];
 
   ///curriculumService: CurriculumService;
 
   constructor(
     private curriculumService: CurriculumService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
      ) {
     // this.curriculum = [];
     //this.curriculumService = new CurriculumService;
@@ -38,6 +41,10 @@ export class CurriculumComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  onAdd() {
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 
 }
